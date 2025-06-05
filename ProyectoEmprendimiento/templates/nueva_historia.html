@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Historia Clínica Fisioterapéutica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding: 30px;
+    }
+    h5 {
+      margin-top: 40px;
+    }
+    textarea {
+      resize: vertical;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container bg-white p-4 shadow rounded">
+    <h3 class="mb-4">Historia Clínica Fisioterapéutica Infantil</h3>
+
+    <form id="formHistoria">
+      <!-- DATOS DEL PACIENTE -->
+      <h5>Datos del paciente</h5>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label>Nombre</label>
+          <input type="text" class="form-control" name="nombre" required>
+        </div>
+        <div class="col-md-2">
+          <label>Edad</label>
+          <input type="number" class="form-control" name="edad" required>
+        </div>
+        <div class="col-md-4">
+          <label>Género</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="genero" value="Masculino" required>
+            <label class="form-check-label">Masculino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="genero" value="Femenino">
+            <label class="form-check-label">Femenino</label>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label>Peso (kg)</label>
+          <input type="number" class="form-control" name="peso">
+        </div>
+        <div class="col-md-3">
+          <label>Estatura (cm)</label>
+          <input type="number" class="form-control" name="estatura">
+        </div>
+        <div class="col-md-3">
+          <label>Fecha de nacimiento</label>
+          <input type="date" class="form-control" name="fecha_nacimiento">
+        </div>
+        <div class="col-md-3">
+          <label>Fecha de evaluación</label>
+          <input type="date" class="form-control" name="fecha_evaluacion">
+        </div>
+        <div class="col-md-6">
+          <label>Escuela</label>
+          <input type="text" class="form-control" name="escuela">
+        </div>
+        <div class="col-md-2">
+          <label>Grado</label>
+          <input type="text" class="form-control" name="grado">
+        </div>
+        <div class="col-md-6">
+          <label>Nombre del padre/madre o tutor</label>
+          <input type="text" class="form-control" name="tutor">
+        </div>
+        <div class="col-md-4">
+          <label>Teléfono de contacto</label>
+          <input type="tel" class="form-control" name="telefono">
+        </div>
+        <div class="col-md-4">
+          <label>Correo electrónico</label>
+          <input type="email" class="form-control" name="correo">
+        </div>
+      </div>
+
+      <!-- ANTECEDENTES MÉDICOS -->
+      <h5>Antecedentes médicos</h5>
+      <textarea class="form-control mb-2" name="enfermedades" placeholder="Enfermedades importantes"></textarea>
+      <textarea class="form-control mb-2" name="cirugias" placeholder="Cirugías previas"></textarea>
+      <textarea class="form-control mb-2" name="hospitalizaciones" placeholder="Hospitalizaciones"></textarea>
+      <textarea class="form-control mb-2" name="alergias" placeholder="Alergias"></textarea>
+      <textarea class="form-control mb-2" name="medicamentos" placeholder="Medicamentos actuales"></textarea>
+
+      <div class="mb-2">
+        <label>Vacunación completa</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="vacunacion" value="Sí">
+          <label class="form-check-label">Sí</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="vacunacion" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+
+      <textarea class="form-control mb-2" name="antecedentes_familiares" placeholder="Enfermedades musculoesqueléticas / hereditarias"></textarea>
+
+      <!-- MOTIVO DE CONSULTA -->
+      <h5>Motivo de consulta</h5>
+      <textarea class="form-control mb-3" name="motivo_consulta" rows="2"></textarea>
+
+      <!-- HISTORIA DE LA CONDICIÓN ACTUAL -->
+      <h5>Historia de la condición actual</h5>
+      <div class="mb-2">
+        <label>Inicio de síntomas</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inicio" value="Gradual">
+          <label class="form-check-label">Gradual</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inicio" value="Repentino">
+          <label class="form-check-label">Repentino</label>
+        </div>
+      </div>
+      <textarea class="form-control mb-2" name="descripcion_sintomas" placeholder="Descripción de síntomas"></textarea>
+      <textarea class="form-control mb-2" name="factores" placeholder="Factores que agravan o alivian"></textarea>
+      <textarea class="form-control mb-2" name="tratamientos_previos" placeholder="Tratamientos previos"></textarea>
+
+      <!-- EVALUACIÓN FISIOTERAPÉUTICA -->
+      <h5>Evaluación fisioterapéutica</h5>
+      <textarea class="form-control mb-2" name="postura" placeholder="Observación postural"></textarea>
+      <textarea class="form-control mb-2" name="puntos_dolor" placeholder="Palpación: puntos dolorosos"></textarea>
+      <textarea class="form-control mb-2" name="tejidos_blandos" placeholder="Palpación: tejidos blandos"></textarea>
+      <textarea class="form-control mb-2" name="estructuras_oseas" placeholder="Palpación: estructuras óseas"></textarea>
+
+      <!-- EVALUACIÓN FUNCIONAL -->
+      <h5>Evaluación funcional</h5>
+      <input class="form-control mb-2" name="marcha" placeholder="Marcha">
+      <input class="form-control mb-2" name="equilibrio" placeholder="Equilibrio">
+      <textarea class="form-control mb-2" name="rom" placeholder="Rango de movimiento (áreas afectadas)"></textarea>
+      <textarea class="form-control mb-2" name="fuerza" placeholder="Fuerza muscular (áreas afectadas)"></textarea>
+
+      <!-- PRUEBAS ESPECÍFICAS -->
+      <h5>Pruebas específicas</h5>
+      <select class="form-select mb-2" name="adams">
+        <option value="">Test de Adams (escoliosis)</option>
+        <option value="Positivo">Positivo</option>
+        <option value="Negativo">Negativo</option>
+      </select>
+      <select class="form-select mb-2" name="jack">
+        <option value="">Test de Jack (pie plano)</option>
+        <option value="Positivo">Positivo</option>
+        <option value="Negativo">Negativo</option>
+      </select>
+      <textarea class="form-control mb-2" name="otras_pruebas" placeholder="Otras pruebas realizadas"></textarea>
+
+      <!-- DIAGNÓSTICO -->
+      <h5>Diagnóstico fisioterapéutico preliminar</h5>
+      <textarea class="form-control mb-3" name="diagnostico" rows="2"></textarea>
+
+      <!-- PLAN DE INTERVENCIÓN -->
+      <h5>Plan de intervención</h5>
+      <textarea class="form-control mb-2" name="objetivos" placeholder="Objetivos (corto, mediano, largo plazo)"></textarea>
+      <textarea class="form-control mb-2" name="tratamiento" placeholder="Tratamiento fisioterapéutico propuesto"></textarea>
+      <textarea class="form-control mb-2" name="recomendaciones" placeholder="Recomendaciones generales"></textarea>
+
+      <!-- NOTAS -->
+      <h5>Notas de seguimiento</h5>
+      <textarea class="form-control mb-2" name="notas" rows="2"></textarea>
+
+      <!-- FIRMAS -->
+      <h5>Firmas</h5>
+      <input class="form-control mb-2" name="evaluador" placeholder="Nombre del evaluador">
+      <input class="form-control mb-2" name="firma_evaluador" placeholder="Firma del evaluador">
+      <input class="form-control mb-2" name="firma_tutor" placeholder="Nombre y firma del tutor">
+
+      <button type="submit" class="btn btn-success w-100">Guardar Historia Clínica</button>
+    </form>
+  </div>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('formHistoria');
+    const fichaIndex = localStorage.getItem('fichaAEditar');
+
+    // Si existe una ficha por editar, se cargan los datos al formulario
+    if (fichaIndex !== null) {
+      const historias = JSON.parse(localStorage.getItem('historiasClinicas')) || [];
+      const datos = historias[fichaIndex];
+      for (let key in datos) {
+        const campo = form.elements.namedItem(key);
+        if (campo) {
+          if (Array.isArray(datos[key])) {
+            datos[key].forEach(valor => {
+              const input = [...form.elements[key]].find(i => i.value === valor);
+              if (input) input.checked = true;
+            });
+          } else {
+            campo.value = datos[key];
+          }
+        }
+      }
+    }
+
+    // Al enviar el formulario
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(form);
+      const datos = {};
+
+      for (let [key, value] of formData.entries()) {
+        if (datos[key]) {
+          if (!Array.isArray(datos[key])) {
+            datos[key] = [datos[key]];
+          }
+          datos[key].push(value);
+        } else {
+          datos[key] = value;
+        }
+      }
+
+      const historias = JSON.parse(localStorage.getItem('historiasClinicas')) || [];
+
+      if (fichaIndex !== null) {
+        historias[fichaIndex] = datos;
+        localStorage.removeItem('fichaAEditar');
+      } else {
+        historias.push(datos);
+      }
+
+      localStorage.setItem('historiasClinicas', JSON.stringify(historias));
+
+      alert("Historia clínica registrada correctamente.");
+      form.reset(); // limpiar formulario
+      window.location.href = "dashboard"; // redirigir al panel
+    });
+  });
+</script>
+
+</body>
+</html>
