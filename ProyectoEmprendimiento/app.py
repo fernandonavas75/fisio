@@ -33,7 +33,6 @@ def dashboard():
 
     usuario = session['usuario']
     rol = session['rol']
-
     return render_template('dashboard.html', usuario=usuario, rol=rol)
 
 @app.route('/nueva-historia', methods=['GET', 'POST'])
@@ -43,8 +42,7 @@ def nueva_historia():
         return redirect(url_for('login'))
 
     if request.method == 'POST':
-        # Aquí capturarías los datos del formulario
-        # Ejemplo: nombre = request.form['nombre']
+        # Captura de datos omitida para este ejemplo
         flash("Historia clínica registrada correctamente.", "success")
         return redirect(url_for('dashboard'))
 
@@ -61,7 +59,6 @@ def reportes():
         return redirect(url_for('login'))
     return render_template('reportes.html')
 
-
 @app.route('/logout')
 def logout():
     session.clear()
@@ -69,4 +66,6 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
